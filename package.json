@@ -1,28 +1,29 @@
 {
-  "name": "nochobot",
+  "name": "xavistyle",
   "version": "1.0.0",
   "description": "",
-  "main": "archivo.js",
+  "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "npx babel-node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/motercode/xavistyle.git"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "dotenv": "^16.0.0",
-    "telegraf": "^4.6.0",
-    "yarn": "^1.22.17"
+  "bugs": {
+    "url": "https://github.com/motercode/xavistyle/issues"
   },
+  "homepage": "https://github.com/motercode/xavistyle#readme",
   "devDependencies": {
     "@babel/cli": "^7.17.0",
     "@babel/core": "^7.17.2",
     "@babel/node": "^7.16.8",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/register": "^7.17.0",
-    "babel": "^6.23.0",
-    "babel-jest": "^27.5.1",
-    "jest": "^27.5.1",
-    "ts-node": "^10.4.0",
-    "ts-standard": "^11.0.0"
+    "@babel/preset-env": "^7.16.11"
+  },
+  "dependencies": {
+    "telegraf": "^4.7.0"
   }
 }
