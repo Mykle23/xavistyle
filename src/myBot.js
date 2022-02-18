@@ -10,7 +10,7 @@ class MyBot{
     }
 
     build(){
-        const fakeBotKey = Settings.botkey;
+        const fakeBotKey = process.env.BOT_TOKEN;
         const theBot = new Telegraf(fakeBotKey);
         return theBot
     }
