@@ -1,4 +1,4 @@
-import { Expense } from '../src/expenses/expense.js';
+import { Expense } from '../../../src/expenses/expense.js';
 
 describe('test of the constructor of Expense', () => {
      const exp = {

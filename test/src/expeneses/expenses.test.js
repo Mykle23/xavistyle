@@ -1,4 +1,4 @@
-import { Expenses } from '../src/expenses/expenses.js'
+import { Expenses } from '../../../src/expenses/expenses.js'
 
 describe('Test about the methods', () => {
     it('Verify the return of add', () => {

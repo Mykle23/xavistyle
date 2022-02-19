@@ -1,5 +1,5 @@
-import { Ledger } from '../src/expenses/ledger.js';
-import { Expense } from '../src/expenses/expense.js'
+import { Ledger } from '../../../src/expenses/ledger.js';
+import { Expense } from '../../../src/expenses/expense.js'
 
 describe('ledger works as a ledger ',() => {
         const exp = {
