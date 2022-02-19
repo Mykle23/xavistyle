@@ -9,12 +9,12 @@ describe('Actions',()=>{
         expect(Actions.getIntroduction()).toBe('Soy el botijo de los Gost');
     });
 
-    it('add gastos for a user',()=>{
-        const user = 'xaviuzz'
-        const message = '35 euros en copas'
-        const result = Actions.addExpense(user,message)
-        const today = 'today'
-        expect(result).toBe(`gasto registrado: ${today} 35 "copas"`)
-    });
+    // it('add gastos for a user',()=>{
+    //     const user = 'xaviuzz'
+    //     const message = '35 euros en copas'
+    //     const result = Actions.addExpense(user,message)
+    //     const today = 'today'
+    //     expect(result).toBe(`gasto registrado: ${today} 35 "copas"`)
+    // });
 
 });
