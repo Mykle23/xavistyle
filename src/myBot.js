@@ -37,14 +37,14 @@ class MyBot{
     }
 
     runAction(ctx, action){
-        const user = ctx.message.from.id 
+        const user_id = ctx.message.from.id 
         const message = this.clean(ctx.message.text)
-        ctx.reply(action(user,message));
+        ctx.reply(action(user_id,message));
     }
 
     clean(text){
-        let cleaned = text
-        console.log('strip the command from the message')
+        let cleaned = text;
+        cleaned = cleaned.replace(/^\/\S+ /,'');
         return cleaned
     }
 

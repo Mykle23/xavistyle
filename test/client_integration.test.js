@@ -14,8 +14,8 @@ aBot.start();
  
   // testing actions
   resultMessage.push(await runIntegrationTest('help command test', "/help","hola majete", 0));
-  resultMessage.push(await runIntegrationTest('gastos command test', '/gastos','gasto registrado: today 35 "copas"', 4));
-  resultMessage.push(await runIntegrationTest('start command test', "/start","Soy el botijo de los Gost", 0));
+  resultMessage.push(await runIntegrationTest('gastos command test', '/gastos','gasto registrado: today 35 "copas"', 5));
+  resultMessage.push(await runIntegrationTest('start command test', "/start","Soy el botijo de los Gost", 5));
 
   showTestResults(resultMessage);
   process.exit(1);

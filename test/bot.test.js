@@ -10,3 +10,10 @@ describe('it works ',() => {
 
     })
 })
+describe('has functions to handle messages',() => {
+    test('can strip the command form the message',() => {
+        let mybot = new MyBot();
+        const message = '/anycommand cleaned message';
+        expect(mybot.clean(message)).toBe('cleaned message');
+    })
+})
