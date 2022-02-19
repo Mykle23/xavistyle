@@ -22,6 +22,7 @@ class Actions{
         
         Users.ensure(user)
         const expense = Expenses.add(user,theExpense)
+        if(expense === false) {return Messages.retrieve('err.ledger')};
         const answer = Messages.retrieve('expense.added')
         const result =  `${answer}: ${expense}` 
         

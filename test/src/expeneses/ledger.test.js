@@ -35,5 +35,9 @@ describe('ledger works as a ledger ',() => {
         Ledger.add(anotherUser, anotherExpense);
         expect(Ledger.collection[usertoAdd]).toStrictEqual([expenseToAdd]);
         expect(Ledger.collection[anotherUser]).not.toStrictEqual([expenseToAdd]);
-    })
+    });
+
+    it('persintace of ledger',() => {
+        
+    });
 })

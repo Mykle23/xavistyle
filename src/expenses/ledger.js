@@ -7,8 +7,8 @@ class Ledger{
         if(!this.collection[user_id])this.collection[user_id]=[];
         let bag = this.collection[user_id]
         bag.push(expense)
-        if (!(Ledger.save())) {
-            throw 'Error in saving ledger';
+        if(!(Ledger.save())) {
+            return false;
         };
     }
 
