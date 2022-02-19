@@ -14,7 +14,7 @@ describe('Actions',()=>{
         const message = '35 euros en copas'
         const result = Actions.addExpense(user,message)
         const today = 'today'
-        expect (result).toBe(`gasto registrado: ${today} 35 "copas"`)
+        expect(result).toBe(`gasto registrado: ${today} 35 "copas"`)
     });
 
 });
