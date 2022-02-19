@@ -1,5 +1,6 @@
 import { Telegraf } from 'telegraf';
 import { Settings } from './infrastructure/settings.js';
+import 'dotenv/config';
 import { Actions } from './actions.js';
 
 class MyBot{
