@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import 'dotenv/config';
 
 class Ledger{
     static collection = {}
@@ -14,11 +15,11 @@ class Ledger{
 
     static save() {
         try {
-            fs.writeFileSync(process.env.DATA_FILE_EXPENESES, JSON.stringify(this.collection));
-            console.log('Sucess in saving');
+            fs.writeFileSync(process.env.DATA_FILE_EXPEkNESES, JSON.stringify(this.collection));
+            // console.log('Sucess in saving');
             return true;
         } catch (err) {
-            console.error(err);
+            console.log(err);
             return false;
         }
     }
