@@ -66,31 +66,20 @@ describe('ledger works as a ledger ', () => {
         expect(spy).toHaveBeenCalled();
 
     });
-<<<<<<< HEAD
-    it('load of ledger',() => {
-        const expected = { fer_id: [ {} ] };
-=======
 
     //comprobar si la informaccion persistida es lo que recibo p
     //comrobar que ledeger almacene una colleccion igual que la persistida
     it('load of ledger', () => {
         const expected = { fer_id: [{}] };
->>>>>>> e97d6e8411be6d5b747584e981055b04cf4b315d
         Ledger.load();
         const result = Ledger.collection;
         expect(result).toStrictEqual(expected);
     });
-<<<<<<< HEAD
-    it('load of ledger if error returns false',() => {
-        let result = Ledger.load();
-        expect(result).toBeFalsy();
-=======
 
     it('load of ledger', () => {
         const expected = { fer_id: [{}] };
         Ledger.load();
         const result = Ledger.collection;
         expect(result).toStrictEqual(expected);
->>>>>>> e97d6e8411be6d5b747584e981055b04cf4b315d
     });
 });
