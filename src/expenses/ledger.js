@@ -23,6 +23,21 @@ class Ledger{
         Ledger.add(usertoAdd, expenseToAdd);
         Ledger.save();
     }
+    static load() {
+        let result = '';
+        try {
+            result = fs.readFileSync(process.env.DATA_FILE_EXPENES);
+            console.log(result);
+            this.collection=result;
+            return true;
+        } catch (err) {
+            return false;
+        }
+
+
+    }
+
+
 }
 
 export {Ledger}

@@ -76,5 +76,14 @@ describe('ledger works as a ledger ', () => {
         expect(spy).toHaveBeenCalled();
 
     });
-    
+    it('load of ledger',() => {
+        const expected = { fer_id: [ {} ] };
+        Ledger.load();
+        const result = Ledger.collection;
+        expect(result).toStrictEqual(expected);
+    });
+    it('load of ledger if error returns false',() => {
+        let result = Ledger.load();
+        expect(result).toBeFalsy();
+    });
 });
