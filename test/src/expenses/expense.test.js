@@ -17,7 +17,11 @@ describe('test of the constructor of Expense', () => {
     it('if date is undefined must be "today"',() => {
         exp.date = undefined;
         const defaultExp = new Expense(exp);
-        const expected = Date(Date.now());
+        const expected = new Intl.DateTimeFormat('en-US', {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric'
+          }).format(Date.now());
 
         expect(defaultExp.date).toEqual(expected);
     });
@@ -27,10 +31,10 @@ describe('test about the methods', () => {
     it('description methods should return the description of the expense', () => {
         const exp = {
             money: 0,
-            concept: '',
+            concept: 'sardinas',
             date: 2
         };
-        const expected = `${exp.date} ${exp.money} "${exp.concept}"`;
+        const expected = `El ${exp.date}, cantidad: ${exp.money} "${exp.concept}"`;
         const defaultExp = new Expense(exp);
 
         expect(defaultExp.description()).toEqual(expected);

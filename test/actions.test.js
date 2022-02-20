@@ -17,4 +17,16 @@ describe('Actions',()=>{
     //     expect(result).toBe(`gasto registrado: ${today} 35 "copas"`)
     // });
 
+    it('nuevo_usuario', () =>{
+        const default_user = {
+            id: 34512345,
+            first_name: 'Fernado',
+            name: 'melacoge con la mano'
+        };
+        const message = '';
+        const expectedResult = `usuario registrado: Hola ${default_user.first_name} tu usuario ha sido creado.`;
+
+        expect(Actions.newUser(default_user.id,message)).toBe(expectedResult);
+    })
+
 });

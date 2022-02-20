@@ -24,8 +24,8 @@ class MyBot{
     
 
     addCommands(){
-        this.bot.command('gastos',(ctx) => this.runAction(ctx,Actions.addExpense))
-
+        this.bot.command('gastos',(ctx) => this.runAction(ctx,Actions.addExpense));
+        this.bot.command('nuevo_usuario',(ctx) => this.runAction(ctx,Actions.newUser));
     }
 
     addHelp(){
@@ -37,9 +37,9 @@ class MyBot{
     }
 
     runAction(ctx, action){
-        const user_id = ctx.message.from.id 
+        const user_ctx = ctx.message.from
         const message = this.clean(ctx.message.text)
-        ctx.reply(action(user_id,message));
+        ctx.reply(action(user_ctx,message));
     }
 
     clean(text){

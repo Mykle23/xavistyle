@@ -21,7 +21,7 @@ class Ledger{
 
     static addAndSave(usertoAdd, expenseToAdd){
         Ledger.add(usertoAdd, expenseToAdd);
-        Ledger.save();
+        return Ledger.save();
     }
 
     static load() {

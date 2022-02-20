@@ -8,7 +8,7 @@ describe('Test about the methods', () => {
             date: 2
         };
         const defaultUser = 25;
-        const expected = `${defaultExp.date} ${defaultExp.money} "${defaultExp.concept}"`
+        const expected = `El ${defaultExp.date}, cantidad: ${defaultExp.money} "${defaultExp.concept}"`
 
         const result = Expenses.add(defaultUser, defaultExp);
 
