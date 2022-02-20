@@ -3,5 +3,4 @@ class Roster{
     static create(){}
 }
 
-
 export {Roster}
