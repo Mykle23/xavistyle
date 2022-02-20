@@ -6,7 +6,7 @@ class Expense{
     }
 
     today(){
-        return 'today'
+        return Date(Date.now());
     }
 
     description(){

@@ -17,8 +17,10 @@ describe('test of the constructor of Expense', () => {
     it('if date is undefined must be "today"',() => {
         exp.date = undefined;
         const defaultExp = new Expense(exp);
+        const expected = Date(Date.now());
 
-        expect(defaultExp.date).toEqual('today');
+        console.log(defaultExp.date);
+        expect(defaultExp.date).toEqual(expected);
     });
 });
 
