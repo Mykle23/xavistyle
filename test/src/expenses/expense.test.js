@@ -19,7 +19,6 @@ describe('test of the constructor of Expense', () => {
         const defaultExp = new Expense(exp);
         const expected = Date(Date.now());
 
-        console.log(defaultExp.date);
         expect(defaultExp.date).toEqual(expected);
     });
 });

@@ -29,7 +29,6 @@ class Ledger{
             this.collection = fs.readFileSync(process.env.DATA_FILE_EXPENSES);
             return true;
         } catch (err) {
-            console.log(`error de lectura`);
             return false;
         }
     }

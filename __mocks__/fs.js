@@ -16,7 +16,5 @@ fs.readFileSync.mockReturnValueOnce('firstCalledWeDontNEED').mockReturnValueOnce
 
 
 
-fs.readFileSync = jest.fn();
-fs.readFileSync.mockImplementation(()=> ({ fer_id: [ {} ] }));
 
 module.exports =fs;

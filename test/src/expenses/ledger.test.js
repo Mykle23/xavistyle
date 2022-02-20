@@ -76,10 +76,9 @@ describe('ledger works as a ledger ', () => {
         expect(result).toStrictEqual(expected);
     });
 
-    it('load of ledger', () => {
-        const expected = { fer_id: [{}] };
-        Ledger.load();
-        const result = Ledger.collection;
-        expect(result).toStrictEqual(expected);
+    
+    it('load of ledger return false when fs error on read', () => {
+        const result = Ledger.load();
+        expect(result).toBeFalsy();
     });
 });
