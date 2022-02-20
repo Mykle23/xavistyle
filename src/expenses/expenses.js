@@ -3,12 +3,11 @@ import {Ledger} from './ledger'
 
 class Expenses{
 
-    static add(user,expense){
-        const theExpense = new Expense(expense)
-        if(Ledger.add(user,theExpense) === false) {
-            return false;
-        };
-        return theExpense.description()
+    static add(user,expense) {
+        const theExpense = new Expense(expense);
+        Ledger.add(user,theExpense);
+
+        return theExpense.description();
     }
 }
 
