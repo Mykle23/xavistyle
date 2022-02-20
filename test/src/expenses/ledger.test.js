@@ -6,9 +6,16 @@ process.env.DATA_FILE_EXPENESES = "./test/src/expenses/expensesData";
 
 
 
+beforeEach(() => {
+    initializeLedger();
+  });
+
+function initializeLedger(){
+    Ledger.collection={};
+  };
+
 describe('ledger works as a ledger ', () => {
     it('should add an user and expense to the collection',() => {
-        Ledger.collection={};
         const usertoAdd = 'fer_id';
         const expenseToAdd = {};
         const initial_collection = JSON.stringify(Ledger.collection);
@@ -18,8 +25,6 @@ describe('ledger works as a ledger ', () => {
     });
 
     it('when add an expense to a user must be add only to that user expenses',() => {
-        Ledger.collection={};
-
         const usertoAdd = 'fer_id';
         const expenseToAdd = {};
         const anotherUser = 'nacho_id';
@@ -58,5 +63,18 @@ describe('ledger works as a ledger ', () => {
 
         expect(result).toBe(expected);
     });
-  
+    it('should be able to add and save in the same method',() => {
+        const usertoAdd = 'fer_id';
+        const expenseToAdd = {};
+        const initial_collection = JSON.stringify(Ledger.collection);
+       
+        const spy = jest.spyOn(Ledger, 'save');
+
+        Ledger.addAndSave(usertoAdd, expenseToAdd);
+        expect(JSON.stringify(Ledger.collection)).not.toStrictEqual(initial_collection);
+        expect(Ledger.collection[usertoAdd]).toStrictEqual([expenseToAdd]);
+        expect(spy).toHaveBeenCalled();
+
+    });
+    
 });

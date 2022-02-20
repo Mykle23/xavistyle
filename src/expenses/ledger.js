@@ -8,7 +8,6 @@ class Ledger{
         if(!this.collection[user_id])this.collection[user_id]=[];
         let bag = this.collection[user_id]
         bag.push(expense)
-        // return Ledger.save();   
     }
 
     static save() {
@@ -19,6 +18,10 @@ class Ledger{
         } catch (err) {
             return false;
         }
+    }
+    static addAndSave(usertoAdd, expenseToAdd){
+        Ledger.add(usertoAdd, expenseToAdd);
+        Ledger.save();
     }
 }
 
