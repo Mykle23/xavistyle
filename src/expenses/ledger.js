@@ -32,6 +32,12 @@ class Ledger{
             return false;
         }
     }
+
+    static getById(user_id) {
+        const result = this.collection[user_id];
+
+        return result;
+    }
 }
 
 export {Ledger}

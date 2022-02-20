@@ -26,7 +26,7 @@ class MyBot{
     addCommands(){
         this.bot.command('addgasto',(ctx) => this.runAction(ctx,Actions.addExpense));
         this.bot.command('nuevo_usuario',(ctx) => this.runAction(ctx,Actions.newUser));
-           
+        this.bot.command('gastos',(ctx) => this.runAction(ctx,Actions.showExpenses));
     }
 
     addHelp(){

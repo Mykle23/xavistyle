@@ -21,7 +21,7 @@ class Actions {
         };
 
         Users.ensure(user)
-        const expense = Expenses.add(user, theExpense);
+        const expense = Expenses.add(user.id, theExpense);
         //cambiar esto para la gestion de errores
         if (expense === false) { return Messages.retrieve('err.ledger') };
         const answer = Messages.retrieve('expense.added');
@@ -42,6 +42,12 @@ class Actions {
         const user = Users.describe(theUser);
         const answer = Messages.retrieve('user.new_user');
         const result = `${answer}: ${user}`;
+
+        return result;
+    }
+
+    static showExpenses(theUser, message) {
+        const result = Expenses.show(theUser.id);
 
         return result;
     }

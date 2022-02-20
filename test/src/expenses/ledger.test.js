@@ -76,9 +76,32 @@ describe('ledger works as a ledger ', () => {
         expect(result).toStrictEqual(expected);
     });
 
-    
     it('load of ledger return false when fs error on read', () => {
         const result = Ledger.load();
         expect(result).toBeFalsy();
+    });
+
+    it('When getById is call must return an array of expenses', () => {
+        const exp1 = {
+            money: 23,
+            concept: 'naves',
+            date: '07/04/1997'
+        };
+        const exp2 = {
+            money: 32,
+            concept: 'manzanas',
+            date: '28/10/1998'
+        };
+        const default_user = {
+            id: 341341,
+            first_name: 'Fernado A.',
+            name: 'Fernando'
+        };
+        const expectedResult = [exp1, exp2];
+        Ledger.add(default_user.id,exp1);
+        Ledger.add(default_user.id,exp2);
+        const result = Ledger.getById(default_user.id);
+
+        expect(result).toEqual(expectedResult);
     });
 });
