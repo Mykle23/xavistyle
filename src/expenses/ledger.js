@@ -11,17 +11,27 @@ class Ledger{
     }
 
     static save() {
-
         try {
-            fs.writeFileSync(process.env.DATA_FILE_EXPENESES, JSON.stringify(this.collection));
+            fs.writeFileSync(process.env.DATA_FILE_EXPENSES, JSON.stringify(this.collection));
             return true;
         } catch (err) {
             return false;
         }
     }
+
     static addAndSave(usertoAdd, expenseToAdd){
         Ledger.add(usertoAdd, expenseToAdd);
         Ledger.save();
+    }
+
+    static load() {
+        try {
+            this.collection = fs.readFileSync(process.env.DATA_FILE_EXPENSES);
+            return true;
+        } catch (err) {
+            console.log(`error de lectura`);
+            return false;
+        }
     }
 }
 
