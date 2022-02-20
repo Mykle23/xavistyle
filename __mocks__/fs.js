@@ -9,5 +9,7 @@ fs.writeFileSync = jest.fn();
 fs.writeFileSync.mockReturnValueOnce(true).mockImplementation(() => {
     throw new Error();
   });;
+
+
+
 module.exports =fs;
-// export { fs };

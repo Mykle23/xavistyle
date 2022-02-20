@@ -1,28 +1,16 @@
 import { Ledger } from '../../../src/expenses/ledger.js';
-import { Expense } from '../../../src/expenses/expense.js';
-// import { fs } from 'fs';
-// import 'dotenv/config';
-// import { fs } from '../../../__mocks__/fs.js';
+
 
 jest.mock('fs');
-process.env.DATA_FILE_EXPENESES = "./expensesData";
+process.env.DATA_FILE_EXPENESES = "./test/src/expenses/expensesData";
+
 
 
 describe('ledger works as a ledger ', () => {
-    const exp = {
-        money: 0,
-        concept: '',
-        date: 2
-    };
-    const exp2 = {
-        money: 0,
-        concept: '',
-        date: 3
-    }
     it('should add an user and expense to the collection',() => {
         Ledger.collection={};
         const usertoAdd = 'fer_id';
-        const expenseToAdd = new Expense(exp);
+        const expenseToAdd = {};
         const initial_collection = JSON.stringify(Ledger.collection);
         Ledger.add(usertoAdd, expenseToAdd);
         expect(JSON.stringify(Ledger.collection)).not.toStrictEqual(initial_collection);
@@ -33,9 +21,9 @@ describe('ledger works as a ledger ', () => {
         Ledger.collection={};
 
         const usertoAdd = 'fer_id';
-        const expenseToAdd = new Expense(exp);
+        const expenseToAdd = {};
         const anotherUser = 'nacho_id';
-        const anotherExpense = new Expense(exp2);
+        const anotherExpense = {another:'different object'};
 
         Ledger.add(usertoAdd, expenseToAdd);
 
@@ -49,7 +37,7 @@ describe('ledger works as a ledger ', () => {
         const expected = true;
         Ledger.collection={};
         const usertoAdd = 'fer_id';
-        const expenseToAdd = new Expense(exp);
+        const expenseToAdd = {};
         Ledger.add(usertoAdd, expenseToAdd);
 
         result = Ledger.save();
@@ -58,12 +46,11 @@ describe('ledger works as a ledger ', () => {
         expect(result).toBe(expected);
     });
     it('persintace of ledger fails if no writes',() => {
-        process.env.DATA_FILE_EXPENESES = './noexistDirectory/expenses.data'
         let result = true;
         const expected = false;
         Ledger.collection={};
         const usertoAdd = 'fer_id';
-        const expenseToAdd = new Expense(exp);
+        const expenseToAdd = {};
         Ledger.add(usertoAdd, expenseToAdd);
 
         result = Ledger.save();
