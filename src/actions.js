@@ -34,7 +34,7 @@ class Actions {
 
         const theUser = {
             id: Parser.extractId(user_ctx),
-            first_name: Parser.extractFristName(user_ctx),
+            first_name: Parser.extractFirstName(user_ctx),
             name: Parser.extractName(user_ctx)
         };
 

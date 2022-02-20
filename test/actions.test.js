@@ -26,7 +26,7 @@ describe('Actions',()=>{
         const message = '';
         const expectedResult = `usuario registrado: Hola ${default_user.first_name} tu usuario ha sido creado.`;
 
-        expect(Actions.newUser(default_user.id,message)).toBe(expectedResult);
+        expect(Actions.newUser(default_user,message)).toBe(expectedResult);
     })
 
 });

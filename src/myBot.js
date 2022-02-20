@@ -37,7 +37,7 @@ class MyBot{
     }
 
     runAction(ctx, action){
-        const user_ctx = ctx.message.from
+        const user_ctx = ctx.message.from;
         const message = this.clean(ctx.message.text)
         ctx.reply(action(user_ctx,message));
     }

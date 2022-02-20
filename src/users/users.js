@@ -6,8 +6,8 @@ class Users {
     }
 
     static describe(theUser) {
-
         return `Hola ${theUser.first_name} tu usuario ha sido creado.`;
     }
 }
+
 export {Users}
