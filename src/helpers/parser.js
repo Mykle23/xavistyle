@@ -1,7 +1,19 @@
 class Parser{
-    static extractMoney(message){return 35};
-    static extractConcept(message){return 'copas'};
-    static extractDate(message) {return undefined} ;
+    static extractMoney(message){
+        let result =parseInt(message.split(' ')[0]); 
+        return result;
+    
+    };
+    static extractConcept(message){
+        let result =message.split(' ').slice(1).join(' '); 
+        result = result.replace(/ \d+\/\d+\/\d+/gm,'');
+        return result;
+    };
+    static extractDate(message) {
+        let result = message.match(/ \d+\/\d+\/\d+/gm);
+        
+        return (result)?result[0].trim():undefined;
+    } ;
     static extractId(from) {return from.id};
     static extractFirstName(from) {return from.first_name}
     static extractName(from) {return from.username}

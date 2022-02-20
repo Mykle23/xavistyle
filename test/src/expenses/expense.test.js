@@ -39,4 +39,15 @@ describe('test about the methods', () => {
 
         expect(defaultExp.description()).toEqual(expected);
     });
+    xit('today must be in european way ', () => {
+        const exp = {
+            money: 0,
+            concept: 'sardinas',
+            date: 2
+        };
+        const expected = `El ${exp.date}, cantidad: ${exp.money} "${exp.concept}"`;
+        const defaultExp = new Expense(exp);
+
+        expect(defaultExp.description()).toEqual(expected);
+    });
 });
