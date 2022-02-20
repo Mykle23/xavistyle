@@ -1,3 +1,6 @@
+test('djfahks',() => {
+    expect(true).toBe(true);
+})
 import { Users } from '../../../src/users/users.js';
 
 it('dommy test', () => {

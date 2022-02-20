@@ -1,4 +1,19 @@
+test('djfahks',() => {
+    expect(true).toBe(true);
+})
 import { Expenses } from '../../../src/expenses/expenses.js'
+import 'dotenv/config';
+process.env.DATA_FILE_EXPENSES = "./test/data/ledger.json";
+const fs = require('fs');
+
+const path = process.env.DATA_FILE_EXPENSES;
+
+try {
+  fs.unlinkSync(path)
+  //file removed
+} catch(err) {
+  console.log(err)
+}
 
 describe('Test about the methods', () => {
     it('Verify the return of add', () => {

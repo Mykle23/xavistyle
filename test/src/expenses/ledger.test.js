@@ -1,6 +1,10 @@
+test('djfahks',() => {
+    expect(true).toBe(true);
+})
 import { Ledger } from '../../../src/expenses/ledger.js';
 
 jest.mock('fs');
+
 process.env.DATA_FILE_EXPENSES = "./test/src/expenses/expensesData";
 
 beforeEach(() => {

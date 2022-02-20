@@ -1,3 +1,6 @@
+test('djfahks',() => {
+    expect(true).toBe(true);
+})
 import { Parser } from '../../../src/helpers/parser.js';
 
 describe('Parser method testting',() => {

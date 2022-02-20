@@ -1,4 +1,19 @@
+test('djfahks',() => {
+    expect(true).toBe(true);
+})
 import {Actions} from '../src/actions.js'
+import 'dotenv/config';
+process.env.DATA_FILE_EXPENSES = "./test/data/ledger.json";
+const fs = require('fs');
+
+const path = process.env.DATA_FILE_EXPENSES;
+
+try {
+  fs.unlinkSync(path)
+  //file removed
+} catch(err) {
+  console.log(err)
+}
 
 describe('Actions',()=>{
     it('retrieves help',()=>{
@@ -9,22 +24,22 @@ describe('Actions',()=>{
         expect(Actions.getIntroduction()).toBe('Soy el botijo de los Gost');
     });
 
-    // it('add gastos for a user',()=>{
-    //     const default_user = {
-    //         id: 34512345,
-    //         first_name: 'Fernado',
-    //         name: 'melacoge con la mano'
-    //     };
-    //     const today = new Intl.DateTimeFormat('en-US', {
-    //         year: 'numeric',
-    //         month: 'numeric',
-    //         day: 'numeric'
-    //       }).format(Date.now());
-    //     const message = '25 euros en copas'
-    //     const result = Actions.addExpense(default_user,message)
+    it('add gastos for a user',()=>{
+        const default_user = {
+            id: 34512345,
+            first_name: 'Fernado',
+            name: 'melacoge con la mano'
+        };
+        const today = new Intl.DateTimeFormat('en-US', {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric'
+          }).format(Date.now());
+        const message = '25 euros en copas'
+        const result = Actions.addExpense(default_user,message)
         
-    //     expect(result).toBe(`gasto registrado: El ${today}, cantidad: 25 \"copas\"`)
-    // });
+        expect(result).toBe(`gasto registrado: El ${today}, cantidad: 25 \"euros en copas\"`)
+    });
 
     it('nuevo_usuario', () =>{
         const default_user = {
@@ -40,7 +55,7 @@ describe('Actions',()=>{
 
     it('should print all the expenses af the user', () => {
         const default_user = {
-            id: 34512345,
+            id: 3422345,
             first_name: 'Fernado',
             name: 'melacoge con la mano'
         };

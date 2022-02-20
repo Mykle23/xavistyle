@@ -4,6 +4,7 @@ import {Ledger} from './ledger'
 class Expenses{
 
     static add(user_id,expense) {
+        Ledger.load();
         const theExpense = new Expense(expense);
         if(!Ledger.addAndSave(user_id,theExpense)) {
             return 'error al grabar, hay un problema llama a los monos.'
@@ -12,7 +13,7 @@ class Expenses{
     }
 
     static show(user_id) {
-        // Ledger.load();
+        Ledger.load();
         const theExpenses = Ledger.getById(user_id);
         const result = Expenses.describe(theExpenses);
 

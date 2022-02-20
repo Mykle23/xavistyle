@@ -6,8 +6,8 @@ class Ledger{
 
     static add(user_id, expense){
         if(!this.collection[user_id])this.collection[user_id]=[];
-        let bag = this.collection[user_id]
-        bag.push(expense)
+        let bag = this.collection[user_id];
+        bag.push(expense);
     }
 
     static save() {
@@ -26,9 +26,9 @@ class Ledger{
 
     static load() {
         try {
-            this.collection = fs.readFileSync(process.env.DATA_FILE_EXPENSES);
+            this.collection = JSON.parse(fs.readFileSync(process.env.DATA_FILE_EXPENSES));       
             return true;
-        } catch (err) {
+        } catch (err) {        
             return false;
         }
     }

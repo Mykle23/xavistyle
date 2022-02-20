@@ -30,7 +30,7 @@ class Actions {
         return result;
     }
 
-    static newUser(user_ctx, message) {
+    static newUser(user_ctx, message='') {
 
         const theUser = {
             id: Parser.extractId(user_ctx),
