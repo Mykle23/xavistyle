@@ -1,3 +1,6 @@
+test('djfahks',() => {
+    expect(true).toBe(true);
+})
 import { MyBot } from '../src/mybot.js';
 import { Telegraf } from 'telegraf';
 

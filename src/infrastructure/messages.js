@@ -3,7 +3,8 @@ class Messages{
         'help': 'hola majete',
         'intro': 'Soy el botijo de los Gost',
         'expense.added': 'gasto registrado',
-        'err.ledger':'Ha habido un problema al registrar el gasto.'
+        'err.ledger':'Ha habido un problema al registrar el gasto.',
+        'user.new_user':'usuario registrado'
     };
 
     static retrieve(key){

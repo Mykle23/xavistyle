@@ -6,14 +6,16 @@ class Expense{
     }
 
     today(){
-        return Date(Date.now());
+        const today = new Intl.DateTimeFormat('en-US', {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric'
+          }).format(Date.now());
+        return today;
     }
 
     description(){
-        return `${this.date} ${this.money} "${this.concept}"`
+        return `El ${this.date}, cantidad: ${this.money} "${this.concept}"`
     }
 }
 export {Expense}
-
-
-//aaaaaaaaaaaaaaaaaaaaa
