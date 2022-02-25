@@ -39,4 +39,154 @@ describe('Parser method testting',() => {
         let result = Parser.extractDate(intakeString);
         expect(result).toEqual(expectedResult);
     });
+
+ //test_m.test.js
+describe('test_m.test.js',()=>{
+
+
+    
+    it('should parse money from a formated string NN concept',() => {
+        const expectedResult = 100;
+        const intakeString = '100€ concepto';
+
+        let result = Parser.extractMoney(intakeString);
+        expect(result).toEqual(expectedResult);
+        
+    });
+    it('should parse money from a formated string NN concept',() => {
+        const expectedResult = -100;
+        const intakeString = '-100€ concepto';
+
+        let result = Parser.extractMoney(intakeString);
+        expect(result).toEqual(expectedResult);
+    });
+    it('should parse money from a formated string NN concept',() => {
+        const expectedResult = 100.50;
+        const intakeString = '100.50€ concepto';
+
+        let result = Parser.extractMoney(intakeString);
+        expect(result).toEqual(expectedResult);
+    });
+    it('should parse money from a formated string NN concept',() => {
+        const expectedResult = 0;
+        const intakeString = '0€ concepto';
+
+        let result = Parser.extractMoney(intakeString);
+        expect(result).toEqual(expectedResult);
+    });
+    it('should parse money from a formated string NN concept',() => {
+        const expectedResult = -0;
+        const intakeString = '-0€ concepto';
+
+        let result = Parser.extractMoney(intakeString);
+        expect(result).toEqual(expectedResult);
+    });
+    it('should parse money from a formated string NN concept',() => {
+        const expectedResult = 100.50 ;
+        const intakeString = '100,50€ concepto';
+
+        let result = Parser.extractMoney(intakeString);
+        expect(result).toEqual(expectedResult);
+    });
+    it('should parse money from a formated string NN concept',() => {
+        const expectedResult = 0.11111111111111111111;
+        const intakeString = '0,11111111111111111111€ concepto';
+
+        let result = Parser.extractMoney(intakeString);
+        expect(result).toEqual(expectedResult);
+    });
+    it('should parse money from a formated string NN concept',() => {
+        const expectedResult = 5;
+        const intakeString = '5euros concepto';
+
+        let result = Parser.extractMoney(intakeString);
+        expect(result).toEqual(expectedResult);
+    });
+    it('should parse money from a formated string NN concept',() => {
+        //en un principio hay que arreglar esto, porque decidimos que no deberia poderse escribir coma, punto,etc.. delante de un numero deberia saltar un mensaje de error
+        const expectedResult = 0.50;
+        const intakeString = ',5  concepto';
+
+        let result = Parser.extractMoney(intakeString);
+        expect(result).toEqual(expectedResult);
+    });
+    it('should parse money from a formated string NN concept',() => {
+        const expectedResult = 5;
+        const intakeString = '5, concepto';
+
+        let result = Parser.extractMoney(intakeString);
+        expect(result).toEqual(expectedResult);
+    });
+    it('should parse money from a formated string NN concept',() => {
+        const expectedResult = 5.50;
+        const intakeString = `5'50  concepto`;
+
+        let result = Parser.extractMoney(intakeString);
+        expect(result).toEqual(expectedResult);
+    });
+    it('should parse money from a formated string NN concept',() => {
+        const expectedResult = 100.50;
+        const intakeString = '100,50€ concepto';
+
+        let result = Parser.extractMoney(intakeString);
+        expect(result).toEqual(expectedResult);
+    });
+    it('should parse money from a formated string NN concept',() => {
+        //esto tiene devuelve error, no queremos que se pueda typear de esta forma
+        //forma de solucionarlo, si lleva una coma y no tiene un numero delante devuelve error
+        const expectedResult = 0.50;
+        const intakeString = `'50€ concepto`;
+
+        let result = Parser.extractMoney(intakeString);
+        expect(result).toEqual(expectedResult);
+    });
+});
+    describe('test_p.test.js sobre la posicion de concepto',()=>{
+        
+    it('should parse concept from a formated string NN concept',() => {
+        const expectedResult = 'concepto';
+        const intakeString = '23 concepto' ;
+
+        let result = Parser.extractConcept(intakeString);
+        expect(result).toEqual(expectedResult);
+    });      
+    it('should parse concept from a formated string NN concept',() => {
+        const expectedResult = 'concepto' ;
+        const intakeString = 'concepto 23' ;   
+        
+        let result = Parser.extractConcept(intakeString);
+        expect(result).toEqual(expectedResult);
+    });    
+    
+    });
+    // describe('test_p.test.js',()=>{
+        
+    //     it('should parse money from a formated string NN concept',() => {
+    //         const expectedResult = 42;
+    //         const intakeString = '42 manzanas';
+    
+    //         let result = Parser.extractMoney(intakeString);
+    //         expect(result).toEqual(expectedResult);
+    //     });
+    //     });
+    // describe('test_p.test.js',()=>{
+        
+    // it('should parse money from a formated string NN concept',() => {
+    //     const expectedResult = 42;
+    //     const intakeString = '42 manzanas';
+
+    //     let result = Parser.extractMoney(intakeString);
+    //     expect(result).toEqual(expectedResult);
+    // });
+    // });
+    // describe('test_p.test.js',()=>{
+        
+    //     it('should parse money from a formated string NN concept',() => {
+    //         const expectedResult = 42;
+    //         const intakeString = '42 manzanas';
+    
+    //         let result = Parser.extractMoney(intakeString);
+    //         expect(result).toEqual(expectedResult);
+    //     });
+    //     });
 })

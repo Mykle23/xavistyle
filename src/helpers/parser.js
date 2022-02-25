@@ -1,10 +1,12 @@
 class Parser{
     static extractMoney(message){
-        let result =parseInt(message.split(' ')[0]); 
+        let result =parseFloat(message.split(' ')[0].replace(',','.').replace("'",".")); 
+       
         return result;
     
     };
     static extractConcept(message){
+        // message.split(' ').find(isNaN)
         let result =message.split(' ').slice(1).join(' '); 
         result = result.replace(/ \d+\/\d+\/\d+/gm,'');
         return result;
