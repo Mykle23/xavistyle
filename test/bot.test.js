@@ -18,5 +18,16 @@ describe('has functions to handle messages',() => {
         let mybot = new MyBot();
         const message = '/anycommand cleaned message';
         expect(mybot.clean(message)).toBe('cleaned message');
-    })
+    });
+    test('can strip the command form the message',() => {
+        let mybot = new MyBot();
+        const message = '/any command cleaned message';
+        
+        expect(mybot.clean(message)).toBe('command cleaned message');// tendria que devolver cleaned message.
+    });
+    // test('can strip the command form the message',() => {
+    //     let mybot = new MyBot();
+    //     const message = '/anycommand cleaned message';
+    //     expect(mybot.clean(message)).toBe('cleaned message');
+    // });
 })

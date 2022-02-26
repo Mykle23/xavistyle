@@ -1,3 +1,5 @@
+import { parse } from "dotenv";
+
 class Parser{
     static extractMoney(message){
         let result =parseFloat(message.split(' ')[0].replace(',','.').replace("'",".")); 
@@ -7,12 +9,21 @@ class Parser{
     };
     static extractConcept(message){
         // message.split(' ').find(isNaN)
-        let result =message.split(' ').slice(1).join(' '); 
-        result = result.replace(/ \d+\/\d+\/\d+/gm,'');
+        let result =message.split(' ').filter(function(word){
+            if(isNaN(parseInt(word))){
+                return word;
+            }
+            
+        });
+        result = result.join(' ');
+        if(result == '') { return 'sin concepto'};
+        // result = result.replace(/ \d+\/\d+\/\d+/gm,'');
         return result;
     };
     static extractDate(message) {
         let result = message.match(/ \d+\/\d+\/\d+/gm);
+        // match devulve undefined  hay que usar find y replace - por/
+        // result = message.match(/\d+-\d+-\d+/gm);
         
         return (result)?result[0].trim():undefined;
     } ;
